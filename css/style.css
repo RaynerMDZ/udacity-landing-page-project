@@ -116,6 +116,14 @@ section {
     color: #000;
 }
 
+a.active {
+    padding: 2rem 4rem;
+    background-color: #d7d7d7;
+    color: #333333;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .nav-link {
     text-decoration: none;
     color: #eeeeee;
@@ -153,6 +161,62 @@ section {
     .landing__container {
         max-width: 50em;
         padding: 4em;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    a.active {
+        padding: 1.5rem 2.5rem;
+        background-color: #d7d7d7;
+        color: #333333;
+        font-weight: bold;
+    }
+
+    .nav-item {
+        text-align: center;
+        display: inline-block;
+        padding: .5em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+@media (max-width: 1024px) {
+    a.active {
+        padding: 1.5rem 2.5rem;
+        background-color: #d7d7d7;
+        color: #333333;
+        font-weight: bold;
+    }
+
+    .nav-item {
+        text-align: center;
+        display: inline-block;
+        padding: .5em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+@media (min-width: 1024px) {
+    a.active {
+        padding: 1.5rem 2.5rem;
+        background-color: #d7d7d7;
+        color: #333333;
+        font-weight: bold;
+    }
+
+    .nav-item {
+        text-align: center;
+        display: inline-block;
+        padding: .5em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
     }
 }
 
@@ -255,11 +319,5 @@ section.your-active-class .landing__container::after {
 	}
 }
 
-a.active {
-    padding: 2rem 4rem;
-    background-color: #d7d7d7;
-    color: #333333;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+
 
