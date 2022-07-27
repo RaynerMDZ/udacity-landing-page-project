@@ -23,6 +23,7 @@
  * 
 */
 
+let sections = [];
 
 /**
  * End Global Variables
@@ -30,7 +31,21 @@
  * 
 */
 
+const capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
+// Finds section ids in the document.
+const findSections = () => {
+    const sections = document.querySelectorAll('section');
+    const sectionArray = [];
+    sections.forEach(item => {
+        sectionArray.push(item.id);
+    });
+    return sectionArray;
+};
+
+sections = findSections();
 
 /**
  * End Helper Functions
@@ -39,10 +54,44 @@
 */
 
 // build the nav
+const createNav = (sections) => {
+    const nav = document.querySelector('.navbar__menu')
+    const navList = document.querySelector('#navbar__list');
 
+    sections.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('nav-item');
+        const link = document.createElement('a');
+        link.classList.add('nav-link');
+        link.href = `#${item.toLowerCase()}`;
+        const number = item.slice(-1);
+        item = item.slice(0, -1);
+        link.textContent = `${capitalize(item)} ${number}`;
+        listItem.appendChild(link);
+        navList.appendChild(listItem);
+    });
+
+    nav.appendChild(navList);
+}
+
+createNav(sections);
 
 // Add class 'active' to section when near top of viewport
+const activateSection = (item) => {
 
+    const href = document.querySelector(`a[href^="#${item.id}"]`);
+
+    const section = item.getBoundingClientRect();
+    const top = section.top;
+    const bottom = section.bottom;
+    if (top < 0 && bottom > 0) {
+        href.classList.add('active');
+        item.classList.add('active');
+    } else {
+        item.classList.remove('active');
+        href.classList.remove('active');
+    }
+};
 
 // Scroll to anchor ID using scrollTO event
 
@@ -53,8 +102,16 @@
  * 
 */
 
-// Build menu 
+// Build menu
+
 
 // Scroll to section on link click
 
 // Set sections as active
+const sectionsList = document.querySelectorAll('section');
+sectionsList.forEach(item => {
+        document.addEventListener('scroll', () => activateSection(item));
+    }
+);
+
+// Creates Navigation menu

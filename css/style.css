@@ -60,10 +60,16 @@ section {
     min-height: 80vh;
 }
 
-
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+
+.navbar__menu {
+    width: 100%;
+    background: rgba(0,13,60,1);
+    z-index: 1;
+}
+
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
@@ -86,6 +92,33 @@ section {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+}
+
+#navbar__list {
+    /*display: flex;*/
+    /*justify-content: space-around;*/
+    /*padding: 1rem 0 1rem 0;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+    align-items: center;
+    align-content: center;
+    padding: 1rem 0 1rem 0;
+}
+
+.nav-item {
+    text-align: center;
+    display: inline-block;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #eeeeee;
 }
 
 /* Header Styles */
@@ -221,3 +254,12 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+a.active {
+    padding: 2rem 4rem;
+    background-color: #d7d7d7;
+    color: #333333;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
