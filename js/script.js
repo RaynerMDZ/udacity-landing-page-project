@@ -84,7 +84,7 @@ const activateSection = (item) => {
     const section = item.getBoundingClientRect();
     const top = section.top;
     const bottom = section.bottom;
-    if (top < 0 && bottom > 0) {
+    if (top < 1 && bottom > 1) {
         href.classList.add('active');
         item.classList.add('active');
     } else {
