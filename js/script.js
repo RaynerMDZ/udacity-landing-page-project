@@ -78,6 +78,12 @@ const createNav = (sections) => {
 createNav(sections);
 
 // Add class 'active' to section when near top of viewport
+const sectionsList = document.querySelectorAll('section');
+sectionsList.forEach(item => {
+        document.addEventListener('scroll', () => activateSection(item));
+    }
+);
+
 const activateSection = (item) => {
 
     const href = document.querySelector(`a[href^="#${item.id}"]`);
@@ -120,10 +126,6 @@ links.forEach(item => {
 });
 
 // Set sections as active
-const sectionsList = document.querySelectorAll('section');
-sectionsList.forEach(item => {
-        document.addEventListener('scroll', () => activateSection(item));
-    }
-);
+
 
 // Creates Navigation menu
