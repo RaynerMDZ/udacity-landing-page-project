@@ -163,28 +163,42 @@ a.active {
         padding: 4em;
     }
 
-
 }
 
+/* Media Query for Mobile Devices */
 @media (max-width: 480px) {
     a.active {
-        padding: 1.5rem 2.5rem;
+        padding: .4rem .4rem;
         background-color: #d7d7d7;
         color: #333333;
         font-weight: bold;
     }
 
+    #navbar__list {
+        /*display: flex;*/
+        /*justify-content: space-around;*/
+        /*padding: 1rem 0 1rem 0;*/
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 1rem;
+        grid-auto-flow: row;
+        align-items: center;
+        align-content: center;
+        padding: 1rem 0 1rem 0;
+    }
+
     .nav-item {
         text-align: center;
         display: inline-block;
-        padding: .5em;
+        padding: .1em;
         font-weight: bold;
         text-decoration: none;
         color: #000;
     }
 }
 
-@media (max-width: 1024px) {
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
     a.active {
         padding: 1.5rem 2.5rem;
         background-color: #d7d7d7;
@@ -202,7 +216,46 @@ a.active {
     }
 }
 
-@media (min-width: 1024px) {
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+    a.active {
+        padding: 1.5rem 2.5rem;
+        background-color: #d7d7d7;
+        color: #333333;
+        font-weight: bold;
+    }
+
+    .nav-item {
+        text-align: center;
+        display: inline-block;
+        padding: .5em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+    a.active {
+        padding: 1.5rem 2.5rem;
+        background-color: #d7d7d7;
+        color: #333333;
+        font-weight: bold;
+    }
+
+    .nav-item {
+        text-align: center;
+        display: inline-block;
+        padding: .5em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
     a.active {
         padding: 1.5rem 2.5rem;
         background-color: #d7d7d7;
