@@ -62,6 +62,7 @@ const createNav = (sections) => {
         const listItem = document.createElement('li');
         listItem.classList.add('nav-item');
         const link = document.createElement('a');
+        link.scrollIntoView(true)
         link.classList.add('nav-link');
         link.href = `#${item.toLowerCase()}`;
         const number = item.slice(-1);
@@ -106,6 +107,17 @@ const activateSection = (item) => {
 
 
 // Scroll to section on link click
+const links = document.querySelectorAll('.nav-link');
+links.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = e.target.getAttribute('href');
+        const section = document.querySelector(href);
+        section.scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
 // Set sections as active
 const sectionsList = document.querySelectorAll('section');
